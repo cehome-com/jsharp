@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="org.h2.Driver" />
+		<property name="url"
+			value="jdbc:h2:mem:~/test;MODE=MySQL" />
+
+	</bean>
+	<bean id="sessionFactory" class="jsharp.sql.ObjectSessionFactory">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="documentDao" class="jsharp.test.DocumentDao" />
+</beans>
