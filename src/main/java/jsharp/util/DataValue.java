@@ -3,7 +3,7 @@ package jsharp.util;
 public class DataValue {
 
 	public static int TYPE_DEFAULT = -1;
-	public static int TYPE_TEXT = 0; // 把value直接加入,不设置？参数
+	public static int TYPE_TEXT = 0; // 鎶妚alue鐩存帴鍔犲叆,涓嶈缃紵鍙傛暟
 	public static int TYPE_CLOB = 1;
 	public static int TYPE_BLOB = 2;
 

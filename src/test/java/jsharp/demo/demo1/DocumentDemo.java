@@ -108,10 +108,10 @@ public class DocumentDemo {
 	
 	@Test
 	public void partSave() throws SQLException {
-		Document doc= dao.createObject();//¹Ø¼üÊÇÕâÀï£¬²»ÄÜÓÃnew
+		Document doc= dao.createObject();//å…³é”®æ˜¯è¿™é‡Œï¼Œä¸èƒ½ç”¨new
 		doc.setId(1);
 		doc.setTitle("title");
-		dao.save(doc,true);// Êµ¼ÊÖ»¸üĞÂÁËtitle×Ö¶Î
+		dao.save(doc,true);// å®é™…åªæ›´æ–°äº†titleå­—æ®µ
 	}
 	
 	
@@ -123,7 +123,7 @@ public class DocumentDemo {
 	@Test
 	public void search2() throws SQLException {
 		
-		Document param= dao.createObject();//±ØĞëÊÇ¶¯Ì¬´´½¨
+		Document param= dao.createObject();//å¿…é¡»æ˜¯åŠ¨æ€åˆ›å»º
 		param.setId(10);
 		param.setTitle("Hello");
 		List<Document> docs=dao.queryListByEntity(null, param);

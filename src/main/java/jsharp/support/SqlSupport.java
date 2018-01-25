@@ -72,16 +72,16 @@ public class SqlSupport {
 	}
 
 	/**
-	 * °ÑÓï¾äÖĞµÄÓÃ´óÀ¨ºÅ°üº¬ÆğÀ´µÄÊôĞÔ£¨Èç£º{name}£©Ìæ»»³ÉÊı¾İ¿â×Ö¶Î£¬Èç¹ûÕÒ²»µ½×Ö¶ÎÔòÈ±Ê¡ÓÃname¡£
+	 * æŠŠè¯­å¥ä¸­çš„ç”¨å¤§æ‹¬å·åŒ…å«èµ·æ¥çš„å±æ€§ï¼ˆå¦‚ï¼š{name}ï¼‰æ›¿æ¢æˆæ•°æ®åº“å­—æ®µï¼Œå¦‚æœæ‰¾ä¸åˆ°å­—æ®µåˆ™ç¼ºçœç”¨nameã€‚
 	 * 
-	 * Èç¹ûÊÇ×Ö·û´®ÄÚÈİÖµÓ¦¸ÃºöÂÔ£¬Ä¿Ç°Ã»ÓĞºöÂÔ£¬Èç x='ddd{dddd}xx'ÀïÃæµÄ´óÀ¨ºÅ£¬½«À´¿ÉÄÜĞèÒª¼ÓÉÏ£¿
+	 * å¦‚æœæ˜¯å­—ç¬¦ä¸²å†…å®¹å€¼åº”è¯¥å¿½ç•¥ï¼Œç›®å‰æ²¡æœ‰å¿½ç•¥ï¼Œå¦‚ x='ddd{dddd}xx'é‡Œé¢çš„å¤§æ‹¬å·ï¼Œå°†æ¥å¯èƒ½éœ€è¦åŠ ä¸Šï¼Ÿ
 	 * 
 	 * @param entityClass
 	 * @param where
 	 * @return
 	 */
 	public static String replacePropsWithColumns(Class entityClass, String where) {
-		// Map ²»½øĞĞ´¦Àí
+		// Map ä¸è¿›è¡Œå¤„ç†
 		if (where==null || Map.class.isAssignableFrom(entityClass.getClass())) return where;
 
 		BeanAnn ba = BeanAnn.getBeanAnn(entityClass);
@@ -92,7 +92,7 @@ public class SqlSupport {
 		while (n < where.length()) {
 			char c = where.charAt(n);
 			if (c == '{') {
-				if (n == 0 || where.charAt(n - 1) != '$') // ${} ÈÏÎªÊÇº¯Êı£¬ºöÂÔ
+				if (n == 0 || where.charAt(n - 1) != '$') // ${} è®¤ä¸ºæ˜¯å‡½æ•°ï¼Œå¿½ç•¥
 					p = n;
 			} else if (c == '}') {
 				if (p != -1) {
@@ -217,9 +217,9 @@ public class SqlSupport {
 	}
 
 	/**
-	 * Java ÀàĞÍ JDBC ÀàĞÍ String VARCHAR »ò LONGVARCHAR java.math.BigDecimal NUMERIC
+	 * Java ç±»å‹ JDBC ç±»å‹ String VARCHAR æˆ– LONGVARCHAR java.math.BigDecimal NUMERIC
 	 * boolean BIT byte TINYINT short SMALLINT int INTEGER long BIGINT float
-	 * REAL double DOUBLE byte[] VARBINARY »ò LONGVARBINARY java.sql.Date DATE
+	 * REAL double DOUBLE byte[] VARBINARY æˆ– LONGVARBINARY java.sql.Date DATE
 	 * java.sql.Time TIME java.sql.Timestamp TIMESTAMP
 	 *
 	 * @param type

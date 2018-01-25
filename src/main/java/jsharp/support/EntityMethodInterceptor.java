@@ -20,7 +20,7 @@ public class EntityMethodInterceptor implements MethodInterceptor, java.io.Seria
     }
 
     /**
-     * ÉèÖÃ¼à¿ØÓĞĞ§ĞÔ
+     * è®¾ç½®ç›‘æ§æœ‰æ•ˆæ€§
      *
      * @param enabled
      */

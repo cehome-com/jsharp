@@ -59,7 +59,7 @@ public class BeanSupport {
 				}
 			}
 
-			// ÓÃµ½cblib, »ñÈ¡ĞèÒª¶¯Ì¬¸üĞÂµÄ×Ö¶Î¼¯
+			// ç”¨åˆ°cblib, è·å–éœ€è¦åŠ¨æ€æ›´æ–°çš„å­—æ®µé›†
 			/*if (Enhancer.isEnhanced(entity.getClass()))// .getName().indexOf("$$EnhancerByCGLIB$$")>0)
 			{
 
@@ -87,14 +87,14 @@ public class BeanSupport {
 
 				ColumnAnn fa = columnMap.get(name);
 
-				// id ×Ö¶ÎºöÂÔ
+				// id å­—æ®µå¿½ç•¥
 				//if (fa.isIdentitied())
 				//	continue;
 				
 				// if(ba.getIdProperty()!=null &&
 				// ba.getIdProperty().getName().equals(name)) continue;
 
-				// ºöÂÔµÄ×Ö¶Î
+				// å¿½ç•¥çš„å­—æ®µ
 				// if(ba.getTransientColumnSet().contains(readMethod.getName()))
 				// continue;
 				if (fa.isTransient())
@@ -111,14 +111,14 @@ public class BeanSupport {
 						continue;
 				}
 
-				// Èç¹ûÊÇ°üº¬sqlÓï¾äÖµÔòÖ±½ÓÈÏÎªÊÇÉèÖÃÎªsqlÓï¾äÎÄ±¾
+				// å¦‚æœæ˜¯åŒ…å«sqlè¯­å¥å€¼åˆ™ç›´æ¥è®¤ä¸ºæ˜¯è®¾ç½®ä¸ºsqlè¯­å¥æ–‡æœ¬
 				if (sqlEntity != null && sqlEntity.findSqlValue(name) != null)
 				{
 					dataMap.put(fa.getName(), sqlEntity.findSqlValue(name), DataValue.TYPE_TEXT);
 					continue;
 				}
 
-				// ¶¯Ì¬²åÈë»ò¸üĞÂ£¬Ö»¸üĞÂ±ä»¯µÄ×Ö¶Î
+				// åŠ¨æ€æ’å…¥æˆ–æ›´æ–°ï¼Œåªæ›´æ–°å˜åŒ–çš„å­—æ®µ
 				if (nameSet != null && !nameSet.contains(name))
 					continue;
 
@@ -128,7 +128,7 @@ public class BeanSupport {
 
 				// String columnName=columnMap.get(readMethod.getName());
 				// if(columnName==null)columnName=name;
-				// ´¦Àí´ó¶ÔÏó£¨Èç¹ûÓĞ@Lob £¬·µ»ØStringÀàĞÍµÄÎªclob£¬·ñÔòÎªblob
+				// å¤„ç†å¤§å¯¹è±¡ï¼ˆå¦‚æœæœ‰@Lob ï¼Œè¿”å›Stringç±»å‹çš„ä¸ºclobï¼Œå¦åˆ™ä¸ºblob
 				// if( ba.getLobColumnSet().contains(readMethod.getName()))
 				if (fa.isLob())
 				{
@@ -139,7 +139,7 @@ public class BeanSupport {
 				}
 				else
 				{
-					// ²¿·ÖÊı¾İ¿â²»Ö§³Öjava.util.Date£¬ËùÒÔĞèÒª×ª»»
+					// éƒ¨åˆ†æ•°æ®åº“ä¸æ”¯æŒjava.util.Dateï¼Œæ‰€ä»¥éœ€è¦è½¬æ¢
 					if (value != null && value.getClass() == java.util.Date.class)
 						value = new java.sql.Timestamp(((java.util.Date) value).getTime());
 
@@ -219,7 +219,7 @@ public class BeanSupport {
 				if (name.equals("class"))
 					continue;
 				ColumnAnn fa = columnMap.get(name);
-				// ºöÂÔµÄ×Ö¶Î
+				// å¿½ç•¥çš„å­—æ®µ
 				// if(ba.getTransientColumnSet().contains(readMethod.getName()))
 				// continue;
 				if (fa.isTransient())
@@ -227,10 +227,10 @@ public class BeanSupport {
 
 				// Method readMethod=p.getReadMethod();
 
-				// »ñÈ¡ÊôĞÔ¶ÔÓ¦µÄ×Ö¶ÎÓ³Éä
+				// è·å–å±æ€§å¯¹åº”çš„å­—æ®µæ˜ å°„
 				// String columnName=columnMap.get(readMethod.getName());
 				// if(columnName==null)columnName=name;
-				// Èç¹ûÊı¾İ¿âÖĞÃ»ÓĞ´Ë×Ö¶ÎÔòºöÂÔ
+				// å¦‚æœæ•°æ®åº“ä¸­æ²¡æœ‰æ­¤å­—æ®µåˆ™å¿½ç•¥
 				if (!columnNameSet.contains(fa.getName().toLowerCase()))
 					continue;
 				//
@@ -245,12 +245,12 @@ public class BeanSupport {
 					}
 				}
 
-				//1. Èç¹ûvalue==null £¬Èç¹ûÊÇ»ù±¾ÀàĞÍ£¬BeanUtils.setProperty
-				// »áÉèÖÃÈ±Ê¡Öµ£¬Èç¹ûÊÇÀàÔòBeanUtils.setProperty»á±¨´í
-				//2.±ØĞëÓÃEntityUtils£¬ÒòÎªÀïÃæÓĞ¸ö³õÊ¼»¯convert
+				//1. å¦‚æœvalue==null ï¼Œå¦‚æœæ˜¯åŸºæœ¬ç±»å‹ï¼ŒBeanUtils.setProperty
+				// ä¼šè®¾ç½®ç¼ºçœå€¼ï¼Œå¦‚æœæ˜¯ç±»åˆ™BeanUtils.setPropertyä¼šæŠ¥é”™
+				//2.å¿…é¡»ç”¨EntityUtilsï¼Œå› ä¸ºé‡Œé¢æœ‰ä¸ªåˆå§‹åŒ–convert
 				if (value != null)
 					EntityUtils.setProperty(bean, name, value);
-				// Èç¹ûvalue==null£¬ ±ØĞëÈçÏÂµ÷ÓÃ²ÅÄÜ²»±¨´í
+				// å¦‚æœvalue==nullï¼Œ å¿…é¡»å¦‚ä¸‹è°ƒç”¨æ‰èƒ½ä¸æŠ¥é”™
 				else
 					p.getWriteMethod().invoke(bean, new Object[] { null });
 				// else p.getWriteMethod().invoke(bean, value);//

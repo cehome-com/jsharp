@@ -12,12 +12,12 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 
 /**
- * SpringµÄÖ§³ÖÒÀÀµ×¢ÈëµÄJUnit4 ¼¯³É²âÊÔ»ùÀà, Ö§³Ö:
+ * Springçš„æ”¯æŒä¾èµ–æ³¨å…¥çš„JUnit4 é›†æˆæµ‹è¯•åŸºç±», æ”¯æŒ:
  * 
- * 1.Ö§³ÖSpring ÒÀÀµ×¢Èë¹¦ÄÜ.
- * 2.Ö§³ÖJUnit Assert¹¦ÄÜ.
+ * 1.æ”¯æŒSpring ä¾èµ–æ³¨å…¥åŠŸèƒ½.
+ * 2.æ”¯æŒJUnit AssertåŠŸèƒ½.
  * 
- * ×ÓÀàĞèÒª¶¨ÒåapplicationContextÎÄ¼şµÄÎ»ÖÃ,Èç:
+ * å­ç±»éœ€è¦å®šä¹‰applicationContextæ–‡ä»¶çš„ä½ç½®,å¦‚:
  * @ContextConfiguration(locations = { "/applicationContext-test.xml" })
  * 
  * @see AbstractJUnit4SpringContextTests

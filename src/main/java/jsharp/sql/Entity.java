@@ -30,8 +30,8 @@ public class Entity implements Serializable {
 	}
 
 	/**
-	 * ÀûÓÃsqlÓï¾äÖµ£¨º¯ÊıµÈ£©¸øÊµÌåÀàµÄÊôĞÔ¸³Öµ£¬Èç setSqlValue("myTime","sysdate")
-	 * µ÷ÓÃ´Ë·½·¨ºó£¬ÔòÊµÌåÀàÊôĞÔ±¾ÉíµÄset·½·¨½«²»Æğ×÷ÓÃ¡£
+	 * åˆ©ç”¨sqlè¯­å¥å€¼ï¼ˆå‡½æ•°ç­‰ï¼‰ç»™å®ä½“ç±»çš„å±æ€§èµ‹å€¼ï¼Œå¦‚ setSqlValue("myTime","sysdate")
+	 * è°ƒç”¨æ­¤æ–¹æ³•åï¼Œåˆ™å®ä½“ç±»å±æ€§æœ¬èº«çš„setæ–¹æ³•å°†ä¸èµ·ä½œç”¨ã€‚
 	 * 
 	 * @param property
 	 * @param sqlValue
@@ -39,7 +39,7 @@ public class Entity implements Serializable {
 	public void setSqlValue(String property, String sqlValue) {
 		if (m == null) m = new HashMap<String, String>();
 		m.put(property, sqlValue);
-		//-- ÒÆ³ıÊµÌåÖµ
+		//-- ç§»é™¤å®ä½“å€¼
 		if(dynFNameSet!=null && dynFNameSet.contains(property)){
 			m.remove(property);
 		}

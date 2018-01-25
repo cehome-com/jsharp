@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 
 /**
- * »ñÈ¡ÊµÌåÀàµÄ×¢½âĞÅÏ¢
+ * è·å–å®ä½“ç±»çš„æ³¨è§£ä¿¡æ¯
  * 
  * @author ma
  * 
@@ -44,7 +44,7 @@ public class BeanAnn
 	
 	public static BeanAnn getBeanAnn(Class entityClass)
 	{
-		//Èç¹ûÊÇÍ¨¹ıcblib ´úÀíÊµÏÖµÄ×ÓÀà£¬ĞèÒª»Øµ½¸¸Àà
+		//å¦‚æœæ˜¯é€šè¿‡cblib ä»£ç†å®ç°çš„å­ç±»ï¼Œéœ€è¦å›åˆ°çˆ¶ç±»
 		if(Enhancer.isEnhanced(entityClass)) entityClass=entityClass.getSuperclass();
 		BeanAnn ba=beanAnns.get(entityClass);
 		if(ba==null)
@@ -85,7 +85,7 @@ public class BeanAnn
 	}
 
 	/**
-	 * ²»½øĞĞÈë¿â´¦ÀíµÄ×Ö¶Î
+	 * ä¸è¿›è¡Œå…¥åº“å¤„ç†çš„å­—æ®µ
 	 * @return
 	 */
 	public java.util.Set<String> getTransientColumnSet() {
@@ -106,7 +106,7 @@ public class BeanAnn
 	}
 
 	/**
-	 * ÉèÖÃID×Ö¶ÎÃû³Æ
+	 * è®¾ç½®IDå­—æ®µåç§°
 	 * @param idName
 	 */
 	public void setIdName(String idName)
@@ -133,7 +133,7 @@ public class BeanAnn
 
 	
 	/**
-	 * ÊµÌåÀàµÄ±íÃû×¢½â
+	 * å®ä½“ç±»çš„è¡¨åæ³¨è§£
 	 * @return
 	 */
 	public String getTable()
@@ -147,7 +147,7 @@ public class BeanAnn
 	}
 
 	/**
-	 * readMethodÃû¸úÊı¾İ¿â×Ö¶ÎÃûÓ³Éä±í
+	 * readMethodåè·Ÿæ•°æ®åº“å­—æ®µåæ˜ å°„è¡¨
 	 * @return
 	 */
 	public Map<String, ColumnAnn> getColumnMap()
@@ -197,7 +197,7 @@ public class BeanAnn
    } 
 
    /**
-    * »ñÈ¡×Ö¶Î»ò·½·¨ÉÏÃæµÄÖ¸¶¨ÀàĞÍµÄ×¢½â£»Èç¹ûÁ½Õß¶¼ÓĞÔò±¨´í¡£
+    * è·å–å­—æ®µæˆ–æ–¹æ³•ä¸Šé¢çš„æŒ‡å®šç±»å‹çš„æ³¨è§£ï¼›å¦‚æœä¸¤è€…éƒ½æœ‰åˆ™æŠ¥é”™ã€‚
     * @param <T>
     * @param c
     * @param method
@@ -275,7 +275,7 @@ public class BeanAnn
 			}
 			else fa.setName(columnUnderscoreSupport?this.camelCaseToUnderscore(name): name);
 
-			//-- @Id×¢½â
+			//-- @Idæ³¨è§£
 			Id id=field.getAnnotation(Id.class);
 			if(id==null && method!=null) id= method.getAnnotation(Id.class);
 			if(id!=null)

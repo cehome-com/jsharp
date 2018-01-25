@@ -230,7 +230,7 @@ public class Convert
 	
 	
 	/**
-	 * �Ѷ�̬�������תΪList������������������List����ת��
+	 * 锟窖讹拷态锟斤拷锟斤拷锟斤拷锟阶狶ist锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷List锟斤拷锟斤拷转锟斤拷
 	 * @param objects
 	 * @return not null List
 	 */

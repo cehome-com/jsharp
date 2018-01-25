@@ -121,7 +121,7 @@ public class JSQueryRunner extends QueryRunner {
 		if (this.getDataSource() == null) {
 			throw new SQLException("QueryRunner requires a DataSource to be " + "invoked in this way, or a Connection should be passed in");
 		}
-		//Èç¹ûÖ´ĞĞ¹ıopenSession²Ù×÷£¬Ôòconn´æÔÚ£¬Ôò¶à´ÎÀûÓÃ,·ñÔò
+		//å¦‚æœæ‰§è¡Œè¿‡openSessionæ“ä½œï¼Œåˆ™connå­˜åœ¨ï¼Œåˆ™å¤šæ¬¡åˆ©ç”¨,å¦åˆ™
 		Connection conn = currentConnectionContext.existingConnection(sessionFactory);
 		if (conn == null) conn = getConnection();
 		return conn;
@@ -183,7 +183,7 @@ public class JSQueryRunner extends QueryRunner {
 	            stmt = conn.prepareStatement( sql,Statement.RETURN_GENERATED_KEYS);
 	            this.fillStatement(stmt, params);
 	            int rows= stmt.executeUpdate();
-	            rs = stmt.getGeneratedKeys();                                  // »ñÈ¡×ÔÔöÖ÷¼ü£¡
+	            rs = stmt.getGeneratedKeys();                                  // è·å–è‡ªå¢ä¸»é”®ï¼
 	            if (rs.next()) return new long[]{rows, rs.getLong(1)};
 	            else return  new long[]{rows,0};
 	             

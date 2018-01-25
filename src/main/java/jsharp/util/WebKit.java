@@ -19,12 +19,12 @@ public class WebKit
 {
 
 	/**
-	 * ÉèÖÃ»ù´¡URL¡£Í¬Ê±°Ñ´ËPageFlipÍ¨¹ıkey£ºFLIP_SOURCE±£´æµ½requestµÄattributeÖĞ
+	 * è®¾ç½®åŸºç¡€URLã€‚åŒæ—¶æŠŠæ­¤PageFlipé€šè¿‡keyï¼šFLIP_SOURCEä¿å­˜åˆ°requestçš„attributeä¸­
 	 * 
 	 * @param request
 	 *            HttpServletRequest
 	 * @param pageNoParamName
-	 *            ´æ´¢ÔÚrequestÖĞ£¬ÓÃÓÚ±íÊ¾µ±Ç°Ò³ÂëµÄ²ÎÊıÃû³Æ
+	 *            å­˜å‚¨åœ¨requestä¸­ï¼Œç”¨äºè¡¨ç¤ºå½“å‰é¡µç çš„å‚æ•°åç§°
 	 */
 	public static String getFilterQueryString(HttpServletRequest request, String... filterParamNames) {
 		String queryString = request.getQueryString();
@@ -46,22 +46,22 @@ public class WebKit
  
 
 	/**
-	 * ½«URLµØÖ·ÖĞ¸ø¶¨µÄÒ»¸ö²ÎÊıÈ¥µô¡£
+	 * å°†URLåœ°å€ä¸­ç»™å®šçš„ä¸€ä¸ªå‚æ•°å»æ‰ã€‚
 	 * 
 	 * @param queryString
-	 *            ½«Òª´¦ÀíµÄURLµØÖ·
+	 *            å°†è¦å¤„ç†çš„URLåœ°å€
 	 * @param toescape
-	 *            ÒªÉ¾µôµÄ²ÎÊıÃû³Æ¡£
+	 *            è¦åˆ æ‰çš„å‚æ•°åç§°ã€‚
 	 */
 	private static String getSubQueryString(String queryString, String toescape) {
 		// String queryString = request.getQueryString() ;
-		// FIXME ÓĞ¸öBUG
+		// FIXME æœ‰ä¸ªBUG
 		if (queryString == null)
 			return "";
 
 		int pos = queryString.indexOf(toescape);
 		if (pos < 0)
-			return queryString; // ²»´æÔÚĞèÒªµÄÊı
+			return queryString; // ä¸å­˜åœ¨éœ€è¦çš„æ•°
 
 		StringBuffer sb = new StringBuffer(128);
 		int total = queryString.length();
@@ -137,11 +137,11 @@ public class WebKit
 	 * 
 	 * @param response
 	 * @param filename
-	 *            Ô´ÎÄ¼şÃû
+	 *            æºæ–‡ä»¶å
 	 * @param isAttachment
-	 *            ÊÇ·ñ×÷Îª¸½¼şÏÂÔØ
+	 *            æ˜¯å¦ä½œä¸ºé™„ä»¶ä¸‹è½½
 	 * @param attachmentName
-	 *            ¸½¼şÃû³Æ
+	 *            é™„ä»¶åç§°
 	 */
 	public static void sendFile(HttpServletResponse response, InputStream is, String contentType,
 			boolean isAttachment, String attachmentName)
@@ -164,7 +164,7 @@ public class WebKit
 		//FileMan fm = null;
 		try {
 
-			// ±¾µØ²âÊÔÓÃ
+			// æœ¬åœ°æµ‹è¯•ç”¨
 			/*if (media.core.Common.isTestEnv()
 					&& Config.getProperty("url-file-root", "").length() > 0
 					&& filename.indexOf(Config.getFilePathTemp()) == -1) {

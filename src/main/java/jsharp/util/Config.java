@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 //import com.myarch.reloader.*;
 
 /*
- * ÅäÖÃĞÅÏ¢¶ÁÈ¡Àà£¨´Ó config.properties¶ÁÈ¡ÏîÄ¿µÄÅäÖÃĞÅÏ¢£©
+ * é…ç½®ä¿¡æ¯è¯»å–ç±»ï¼ˆä» config.propertiesè¯»å–é¡¹ç›®çš„é…ç½®ä¿¡æ¯ï¼‰
  * 
  * */
 
@@ -54,7 +54,7 @@ public  class Config
 	/**
 	 *  config config1 config2
 	 * @param classPath 
-	 * @param count  ËÑË÷Ë÷ÒıÊıÁ¿£¬Èç classPath=config , count=3 ,Ôò»á¼ÌĞøÕÒconfig-1,config-2
+	 * @param count  æœç´¢ç´¢å¼•æ•°é‡ï¼Œå¦‚ classPath=config , count=3 ,åˆ™ä¼šç»§ç»­æ‰¾config-1,config-2
 	 */
 	public   Config(String prefix,String suffix, int count,String encoding)
 	{
@@ -194,7 +194,7 @@ public  class Config
 
 	 
 	/**
-	 * ·µ»ØÅäÖÃÎÄ¼şËùÔÚµÄÂ·¾¶£¨ÀàµÄ¸ùÂ·¾¶£©
+	 * è¿”å›é…ç½®æ–‡ä»¶æ‰€åœ¨çš„è·¯å¾„ï¼ˆç±»çš„æ ¹è·¯å¾„ï¼‰
 	 */
 	/*public static String getConfigPath()
 	{

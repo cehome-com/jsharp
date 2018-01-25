@@ -215,7 +215,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
                     if (gv != null) {
                         String idColumnName = ba.getIdName();
                         // idColumnNames = new String[] { idColumnName };
-                        // �Զ�����ʵ�� . gv.strategy()û��=null��ȱʡΪAUTO
+                        // 锟皆讹拷锟斤拷锟斤拷实锟斤拷 . gv.strategy()没锟斤拷=null锟斤拷缺省为AUTO
                         if (gv.strategy() == GenerationType.AUTO && gv.generator() != null && gv.generator().startsWith("class:")) {
                             // if (gv.generator() != null && gv.generator().length()
                             // > 0)
@@ -225,7 +225,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
                                 list.put(idColumnName, idValue);
                             }
                         } else
-                        // ����ʵ��
+                        // 锟斤拷锟斤拷实锟斤拷
                         {
 
                             GenerationType gt = gv.strategy() == GenerationType.AUTO ? this.getDefaultGenerationType() : gv.strategy();

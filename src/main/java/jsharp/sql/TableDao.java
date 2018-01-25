@@ -23,14 +23,14 @@ public class TableDao<T> extends AbstractDao<T>  {
  
  
 	/**
-	 * ÓÃÓÚ¼Ì³ĞÊ±Ê¹ÓÃ
+	 * ç”¨äºç»§æ‰¿æ—¶ä½¿ç”¨
 	 */
 	protected TableDao() {
 		super();
 	}
 
 	/**
-	 * ÓÃÓÚ¼Ì³ĞÊ±Ê¹ÓÃ
+	 * ç”¨äºç»§æ‰¿æ—¶ä½¿ç”¨
 	 */
 	protected TableDao(final SessionFactory sessionFactory) {
 		super(sessionFactory);

@@ -77,7 +77,7 @@ public class ImageMagick
 	}
 
 	/**
-	 * ¼ÓÉÏË®Ó¡
+	 * åŠ ä¸Šæ°´å°
 	 * 
 	 * @param watermark
 	 *            file
@@ -219,7 +219,7 @@ public class ImageMagick
 	}
 	
 	/**
-	 * »ñÈ¡Ò»¸öÍ¼Æ¬ÎÄ¼şµÄ¿íÔ£¸ß£¬Èç¹û»ñÈ¡Ê§°Ü£¬·µ»Ønull
+	 * è·å–ä¸€ä¸ªå›¾ç‰‡æ–‡ä»¶çš„å®½è£•é«˜ï¼Œå¦‚æœè·å–å¤±è´¥ï¼Œè¿”å›null
 	 * @param source
 	 * @return
 	 */
@@ -243,10 +243,10 @@ public class ImageMagick
 		{ 
 			p = pb.start();
 			logger.debug("read info"); 
-			r=read(p,1).trim(); // Èç¹ûÊÇgifÍ¼Æ¬»á·µ»Ø¶à¸öÍ¼Æ¬µÄ³ß´ç£¬¼´¶àĞĞ³ß´ç£¬ËùÒÔÓ¦¸ÃÈ¡µÚÒ»ĞĞ¼´¿É¡£
+			r=read(p,1).trim(); // å¦‚æœæ˜¯gifå›¾ç‰‡ä¼šè¿”å›å¤šä¸ªå›¾ç‰‡çš„å°ºå¯¸ï¼Œå³å¤šè¡Œå°ºå¯¸ï¼Œæ‰€ä»¥åº”è¯¥å–ç¬¬ä¸€è¡Œå³å¯ã€‚
 			if(r.indexOf('X')==-1)
 			{
-				logger.error("»ñÈ¡³ß´çÊ§°Ü,·µ»Ø½á¹û²»ÊÇ°üº¬XµÄÕıÈ·×Ö·û´®:"+r);
+				logger.error("è·å–å°ºå¯¸å¤±è´¥,è¿”å›ç»“æœä¸æ˜¯åŒ…å«Xçš„æ­£ç¡®å­—ç¬¦ä¸²:"+r);
 				return null;
 			}
 			 
@@ -271,9 +271,9 @@ public class ImageMagick
 
 	/**
 	 * 
-	 * @param source  Ô´ÎÄ¼şÃû
-	 * @param dest	Ä¿±êÎÄ¼şÃû
-	 * @param newSize  ĞÂ³ß´ç
+	 * @param source  æºæ–‡ä»¶å
+	 * @param dest	ç›®æ ‡æ–‡ä»¶å
+	 * @param newSize  æ–°å°ºå¯¸
 	 * @return
 	 * @throws Exception
 	 */
@@ -287,10 +287,10 @@ public class ImageMagick
 		command.add(imageMagickPath + "/convert");
 
 		
-		/*gif ×ªjpg »áÉú²ú¶à¸öjpg£¬ÏÂÃæ´úÂëÖ»Éú³ÉÒ»¸ö
+		/*gif è½¬jpg ä¼šç”Ÿäº§å¤šä¸ªjpgï¼Œä¸‹é¢ä»£ç åªç”Ÿæˆä¸€ä¸ª
 		 * convert image.gif[0] image.jpg
-			ÕâÊ±ºò¾Í»á°ÑgifµÄµÚÒ»Ö¡±£´æÎªimage.jpg¡£ÀàËÆ£¬¿ÉÒÔÓĞconvert image.gif[0,3,5] image.jpg£¬¾Í»á°Ñ0¡¢3¡¢5Ö¡±£´æÎªimage-n.jpg
-                               Èç¹ûGIFÎÄ¼şÊ¹ÓÃÁËÍ¸Ã÷±³¾°£¬ÄÇÉú³ÉµÄÍ¼Æ¬¾Í»á¿´µ½Ò»¸öºÚÉ«µÄ±³¾°£¬ºÜ³ó£¬Ôòconvert image.gif[0] -background white -flatten -alpha off image.jpg
+			è¿™æ—¶å€™å°±ä¼šæŠŠgifçš„ç¬¬ä¸€å¸§ä¿å­˜ä¸ºimage.jpgã€‚ç±»ä¼¼ï¼Œå¯ä»¥æœ‰convert image.gif[0,3,5] image.jpgï¼Œå°±ä¼šæŠŠ0ã€3ã€5å¸§ä¿å­˜ä¸ºimage-n.jpg
+                               å¦‚æœGIFæ–‡ä»¶ä½¿ç”¨äº†é€æ˜èƒŒæ™¯ï¼Œé‚£ç”Ÿæˆçš„å›¾ç‰‡å°±ä¼šçœ‹åˆ°ä¸€ä¸ªé»‘è‰²çš„èƒŒæ™¯ï¼Œå¾ˆä¸‘ï¼Œåˆ™convert image.gif[0] -background white -flatten -alpha off image.jpg
 		 */
 		if(source.toLowerCase().endsWith(".gif")&& !dest.toLowerCase().endsWith(".gif") )
 		{
@@ -298,7 +298,7 @@ public class ImageMagick
 			command.add("-background");
 			command.add("white");
 			command.add("-flatten");
-			//command.add("-alpha"); µÍ°æ±¾µÄImageMagick£¨Èç6.2.8£© ²»Ö§³Ö -alpha ÊôĞÔ
+			//command.add("-alpha"); ä½ç‰ˆæœ¬çš„ImageMagickï¼ˆå¦‚6.2.8ï¼‰ ä¸æ”¯æŒ -alpha å±æ€§
 			//command.add("off");
 			
 		}
@@ -308,7 +308,7 @@ public class ImageMagick
 		}
 		command.add("-resize");
 		command.add(newSize+"x"+newSize);
-		command.add("-colorspace"); // Èç¹ûÊÇcmykÔò×ª³Érgb£¬cmykÔÚieÖĞÎŞ·¨ä¯ÀÀ
+		command.add("-colorspace"); // å¦‚æœæ˜¯cmykåˆ™è½¬æˆrgbï¼Œcmykåœ¨ieä¸­æ— æ³•æµè§ˆ
 		command.add("sRGB");
 		command.add(dest);
 		pb = new ProcessBuilder();
@@ -332,7 +332,7 @@ public class ImageMagick
 	}
 	
 	/**
-	 * ²Ã¼ô
+	 * è£å‰ª
 	 * @param source
 	 * @param dest
 	 * @param x
@@ -351,10 +351,10 @@ public class ImageMagick
 		command.add(imageMagickPath + "/convert");
 
 		
-		/*gif ×ªjpg »áÉú²ú¶à¸öjpg£¬ÏÂÃæ´úÂëÖ»Éú³ÉÒ»¸ö
+		/*gif è½¬jpg ä¼šç”Ÿäº§å¤šä¸ªjpgï¼Œä¸‹é¢ä»£ç åªç”Ÿæˆä¸€ä¸ª
 		 * convert image.gif[0] image.jpg
-			ÕâÊ±ºò¾Í»á°ÑgifµÄµÚÒ»Ö¡±£´æÎªimage.jpg¡£ÀàËÆ£¬¿ÉÒÔÓĞconvert image.gif[0,3,5] image.jpg£¬¾Í»á°Ñ0¡¢3¡¢5Ö¡±£´æÎªimage-n.jpg
-                               Èç¹ûGIFÎÄ¼şÊ¹ÓÃÁËÍ¸Ã÷±³¾°£¬ÄÇÉú³ÉµÄÍ¼Æ¬¾Í»á¿´µ½Ò»¸öºÚÉ«µÄ±³¾°£¬ºÜ³ó£¬Ôòconvert image.gif[0] -background white -flatten -alpha off image.jpg
+			è¿™æ—¶å€™å°±ä¼šæŠŠgifçš„ç¬¬ä¸€å¸§ä¿å­˜ä¸ºimage.jpgã€‚ç±»ä¼¼ï¼Œå¯ä»¥æœ‰convert image.gif[0,3,5] image.jpgï¼Œå°±ä¼šæŠŠ0ã€3ã€5å¸§ä¿å­˜ä¸ºimage-n.jpg
+                               å¦‚æœGIFæ–‡ä»¶ä½¿ç”¨äº†é€æ˜èƒŒæ™¯ï¼Œé‚£ç”Ÿæˆçš„å›¾ç‰‡å°±ä¼šçœ‹åˆ°ä¸€ä¸ªé»‘è‰²çš„èƒŒæ™¯ï¼Œå¾ˆä¸‘ï¼Œåˆ™convert image.gif[0] -background white -flatten -alpha off image.jpg
 		 */
 		if(source.toLowerCase().endsWith(".gif")&& !dest.toLowerCase().endsWith(".gif") )
 		{
@@ -362,7 +362,7 @@ public class ImageMagick
 			command.add("-background");
 			command.add("white");
 			command.add("-flatten");
-			//command.add("-alpha"); µÍ°æ±¾µÄImageMagick£¨Èç6.2.8£© ²»Ö§³Ö -alpha ÊôĞÔ
+			//command.add("-alpha"); ä½ç‰ˆæœ¬çš„ImageMagickï¼ˆå¦‚6.2.8ï¼‰ ä¸æ”¯æŒ -alpha å±æ€§
 			//command.add("off");
 			
 		}
@@ -372,7 +372,7 @@ public class ImageMagick
 		}
 		command.add("-crop");
 		command.add(w+"x"+h+"+"+x+"+"+y);
-		command.add("-colorspace"); // Èç¹ûÊÇcmykÔò×ª³Érgb£¬cmykÔÚieÖĞÎŞ·¨ä¯ÀÀ
+		command.add("-colorspace"); // å¦‚æœæ˜¯cmykåˆ™è½¬æˆrgbï¼Œcmykåœ¨ieä¸­æ— æ³•æµè§ˆ
 		command.add("sRGB");
 		command.add(dest);
 		pb = new ProcessBuilder();

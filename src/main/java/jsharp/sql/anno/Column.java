@@ -6,7 +6,7 @@ import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.*;
 
 /**
- * ÔÚ javax.persistence.Column µÄ»ù´¡ÉÏÔö¼ÓÁËdefaultValue
+ * åœ¨ javax.persistence.Column çš„åŸºç¡€ä¸Šå¢åŠ äº†defaultValue
  * 
  * Is used to specify a mapped column for a persistent property or field. If no Column annotation is
  * specified, the default values are applied.
@@ -63,7 +63,7 @@ public @interface Column {
 	int scale() default 0;
 	/**
 	 * 
-	 * Êı¾İ¿âÖĞÈ±Ê¡ÖµµÃ¶¨Òå
+	 * æ•°æ®åº“ä¸­ç¼ºçœå€¼å¾—å®šä¹‰
 	 */
 	String defaultValue() default "";
 }

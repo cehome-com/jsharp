@@ -70,7 +70,7 @@ public class EntityUtils
 
 	private static void registerDateConverter()
 	{
-		//Èç¹û²»ÅäÖÃ£¬È±Ê¡ÊÇÒªÅ×Òì³£µÄ
+		//å¦‚æœä¸é…ç½®ï¼Œç¼ºçœæ˜¯è¦æŠ›å¼‚å¸¸çš„
 		boolean throwE =!( "0".equals(DefaultConfig.getStr(DefaultConfig.WS_CONVERTER_EXCEPTION_THROW))
 				|| "false".equals(DefaultConfig.getStr(DefaultConfig.WS_CONVERTER_EXCEPTION_THROW)));
 		throwE=false;
@@ -90,17 +90,17 @@ public class EntityUtils
 
 		DateTimeConverter dc = null;
 
-		dc = throwE ? new CalendarConverter() : new CalendarConverter(null); // ×ª»»´íÎóÔòÈ±Ê¡Îªnull
+		dc = throwE ? new CalendarConverter() : new CalendarConverter(null); // è½¬æ¢é”™è¯¯åˆ™ç¼ºçœä¸ºnull
 		dc.setUseLocaleFormat(true);
 		dc.setPatterns(dateTimeFormats);
 		ConvertUtils.register(dc, java.util.Calendar.class);
 
-		dc = throwE ? new DateConverter() : new DateConverter(null); // ×ª»»´íÎóÔòÈ±Ê¡Îªnull
+		dc = throwE ? new DateConverter() : new DateConverter(null); // è½¬æ¢é”™è¯¯åˆ™ç¼ºçœä¸ºnull
 		dc.setUseLocaleFormat(true);
 		dc.setPatterns(dateFormats);
 		ConvertUtils.register(dc, java.util.Date.class);
 
-		dc = throwE ? new SqlDateConverter() : new SqlDateConverter(null); // ×ª»»´íÎóÔòÈ±Ê¡Îªnull
+		dc = throwE ? new SqlDateConverter() : new SqlDateConverter(null); // è½¬æ¢é”™è¯¯åˆ™ç¼ºçœä¸ºnull
 		dc.setUseLocaleFormat(true);
 		dc.setPatterns(dateFormats);
 		ConvertUtils.register(dc, java.sql.Date.class);
@@ -162,9 +162,9 @@ public class EntityUtils
 			}
 
 			// org.apache.commons.beanutils.PropertyUtils.copyProperties(a2,a1);
-			// ²»Í¬ÊôĞÔÀàĞÍ±¨´í
+			// ä¸åŒå±æ€§ç±»å‹æŠ¥é”™
 			// org.apache.commons.beanutils.BeanUtils.copyProperties(a2,a1);
-			// ÖÇÄÜ×°»»ÀàĞÍ
+			// æ™ºèƒ½è£…æ¢ç±»å‹
 			org.apache.commons.beanutils.PropertyUtils.copyProperties(dest, entity);
 			emi.setEnabled(true);
 			return dest;
@@ -187,7 +187,7 @@ public class EntityUtils
 	 * @param to
 	 *            dest
 	 * @param excludeProperties
-	 *            ÅÅ³ıµÄÊôĞÔÃû³Æ
+	 *            æ’é™¤çš„å±æ€§åç§°
 	 */
 	public static void copyExclude(Object from, Object to, boolean useFromProperties,String... excludeProperties)
 	{
@@ -208,7 +208,7 @@ public class EntityUtils
 					if(value==null)
 						BeanUtils.setProperty(	to, name,null);
 					else
-					//--BeanUtils »á×Ô¶¯ÀàĞÍ×ª»»£¬PropertyUtils²»»á
+					//--BeanUtils ä¼šè‡ªåŠ¨ç±»å‹è½¬æ¢ï¼ŒPropertyUtilsä¸ä¼š
 					BeanUtils.setProperty(to, name, value);
 				}
 			}
@@ -224,7 +224,7 @@ public class EntityUtils
 	 * @param o1
 	 * @param o2
 	 * @param includeProperties
-	 *            °üº¬µÄÊôĞÔÃû³Æ
+	 *            åŒ…å«çš„å±æ€§åç§°
 	 */
 	public static void copyInclude(Object o1, Object o2, String... includeProperties)
 	{
@@ -244,7 +244,7 @@ public class EntityUtils
 					if(value==null)
 						BeanUtils.setProperty(	o2, name,null);
 					else
-					//--BeanUtils »á×Ô¶¯ÀàĞÍ×ª»»£¬PropertyUtils²»»á
+					//--BeanUtils ä¼šè‡ªåŠ¨ç±»å‹è½¬æ¢ï¼ŒPropertyUtilsä¸ä¼š
 						BeanUtils.setProperty(o2, name, value);
 				}
 			}
@@ -256,7 +256,7 @@ public class EntityUtils
 	}
 
 	/**
-	 * ºöÂÔ´íÎó
+	 * å¿½ç•¥é”™è¯¯
 	 * 
 	 * @param <T>
 	 * @param c
@@ -287,10 +287,10 @@ public class EntityUtils
 	}
 	
 	/**
-	 * ´´½¨ÊµÌå²¢ÇÒÖ»½ö°ÑincludeParams°üº¬µÄrequestÊôĞÔÖµ¸³¸øÊµÌå¡£
+	 * åˆ›å»ºå®ä½“å¹¶ä¸”åªä»…æŠŠincludeParamsåŒ…å«çš„requestå±æ€§å€¼èµ‹ç»™å®ä½“ã€‚
 	 * @param c
 	 * @param request
-	 * @param includeProperties Èç£ºname ,  *name±íÊ¾·Çempty²Å°üº¬
+	 * @param includeProperties å¦‚ï¼šname ,  *nameè¡¨ç¤ºéemptyæ‰åŒ…å«
 	 * @return
 	 */
 	public static <T> T createInclude(Class<T> c, ServletRequest request,String... includeProperties)
@@ -322,10 +322,10 @@ public class EntityUtils
 	}
 	
 	/**
-	 * ´´½¨ÊµÌå²¢ÇÒ°ÑrequestÊôĞÔÖµ¸³ÓèÊµÌå£¬µ«excludeParams³ıÍâ¡£
+	 * åˆ›å»ºå®ä½“å¹¶ä¸”æŠŠrequestå±æ€§å€¼èµ‹äºˆå®ä½“ï¼Œä½†excludeParamsé™¤å¤–ã€‚
 	 * @param c
 	 * @param request
-	 * @param excludeProperties Èç name   *name ±íÊ¾½öemptyÊ±ºò²ÅÅÅ³ı
+	 * @param excludeProperties å¦‚ name   *name è¡¨ç¤ºä»…emptyæ—¶å€™æ‰æ’é™¤
 	 * @return
 	 */
 	public static <T> T createExclude(Class<T> c, ServletRequest request,String... excludeProperties)

@@ -14,531 +14,531 @@ public class MatchDO extends BaseDO implements Comparable<MatchDO>{
 	private static final long serialVersionUID = 5811966033975461958L;
 
 	/**
-	 * Ö÷¼üid
+	 * ä¸»é”®id
 	 */
 	@GeneratedValue(generator="class:jsharp.sql.id.TimeGeneration")
 	@Id
 	private long matchId;
 
 	/**
-	 * ²ÊÖÖid
+	 * å½©ç§id
 	 */
 	private int lotteryTypeId;
 
 	/**
-	 * ²ÊÆÚid
+	 * å½©æœŸid
 	 */
 	private long issueId;
 
 	/**
-	 * ³¡´ÎĞòºÅ
+	 * åœºæ¬¡åºå·
 	 */
 	private long matchOrder;
 
 	/**
-	 * Íæ·¨
+	 * ç©æ³•
 	 */
 	private int playType;
 
 	/**
-	 * ±ÈÈüÊ±¼ä
+	 * æ¯”èµ›æ—¶é—´
 	 */
 	private Date playTime;
 
 	/**
-	 * ½ØÆÚÊ±¼ä
+	 * æˆªæœŸæ—¶é—´
 	 */
 	private Date endTime;
 
 	/**
-	 * Í£ÊÛÊ±¼ä
+	 * åœå”®æ—¶é—´
 	 */
 	private Date lastBuyTime;
 
 	/**
-	 * ÏúÊÛ×´Ì¬
+	 * é”€å”®çŠ¶æ€
 	 */
 	private int drawed;
 
 	/**
-	 * ÖĞ½±Ãûµ¥×´Ì¬
+	 * ä¸­å¥–åå•çŠ¶æ€
 	 */
 	private int luckyOrderFinished;
 
 	/**
-	 * ÏµÍ³Ëã½±×´Ì¬
+	 * ç³»ç»Ÿç®—å¥–çŠ¶æ€
 	 */
 	private int sysCalFinished;
 
 	/**
-	 * ÏµÍ³±È¶Ô×´Ì¬
+	 * ç³»ç»Ÿæ¯”å¯¹çŠ¶æ€
 	 */
 	private int syncStatus;
 
 	/**
-	 * Õ½¼¨¼ÆËã×´Ì¬
+	 * æˆ˜ç»©è®¡ç®—çŠ¶æ€
 	 */
 	private int experienced;
 
 	/**
-	 * ÈüÊÂÃû³Æ
+	 * èµ›äº‹åç§°
 	 */
 	private String gameName;
 
 	/**
-	 * ÈüÊÂ±àºÅ
+	 * èµ›äº‹ç¼–å·
 	 */
 	private String gameType;
 
 	/**
-	 * ÈüÊÂ×ÊÑ¶
+	 * èµ›äº‹èµ„è®¯
 	 */
 	private int playNum;
 
 	/**
-	 * Ö÷¶ÓÃû³Æ
+	 * ä¸»é˜Ÿåç§°
 	 */
 	private String hostTeam;
 
 	/**
-	 * Ö÷¶ÓÈ«Ãû
+	 * ä¸»é˜Ÿå…¨å
 	 */
 	private String hostTeamFull;
 
 	/**
-	 * ¿Í¶ÓÃû³Æ
+	 * å®¢é˜Ÿåç§°
 	 */
 	private String visitTeam;
 
 	/**
-	 * ¿Í¶ÓÈ«Ãû
+	 * å®¢é˜Ÿå…¨å
 	 */
 	private String visitTeamFull;
 
 	/**
-	 * Ö÷¶Ó×ÊÑ¶
+	 * ä¸»é˜Ÿèµ„è®¯
 	 */
 	private int hostTeamNum;
 
 	/**
-	 * ¿Í¶Ó×ÊÑ¶
+	 * å®¢é˜Ÿèµ„è®¯
 	 */
 	private int visitTeamNum;
 
 	/**
-	 * Ö÷¶ÓÅÅÃû
+	 * ä¸»é˜Ÿæ’å
 	 */
 	private String hostTeamRank;
 
 	/**
-	 * ¿Í¶ÓÅÅÃû
+	 * å®¢é˜Ÿæ’å
 	 */
 	private String visitTeamRank;
 
 	/**
-	 * Ö÷¶Ó¹ú¼Òid
+	 * ä¸»é˜Ÿå›½å®¶id
 	 */
 	private int hostCountry;
 
 	/**
-	 * ¿Í¶Ó¹ú¼Òid
+	 * å®¢é˜Ÿå›½å®¶id
 	 */
 	private int visitCountry;
 
 	/**
-	 * Ö÷¶Ó°ë³¡±È·Ö
+	 * ä¸»é˜ŸåŠåœºæ¯”åˆ†
 	 */
 	private Integer hostTeamHscore;
 
 	/**
-	 * Ö÷¶ÓÈ«³¡±È·Ö
+	 * ä¸»é˜Ÿå…¨åœºæ¯”åˆ†
 	 */
 	private Integer hostTeamFscore;
 
 	/**
-	 * ¿Í¶Ó°ë³¡±È·Ö
+	 * å®¢é˜ŸåŠåœºæ¯”åˆ†
 	 */
 	private Integer visitTeamHscore;
 
 	/**
-	 * ¿Í¶ÓÈ«³¡±È·Ö
+	 * å®¢é˜Ÿå…¨åœºæ¯”åˆ†
 	 */
 	private Integer visitTeamFscore;
 
 	/**
-	 * ÎÄ×ÖÖ±²¥
+	 * æ–‡å­—ç›´æ’­
 	 */
 	private String wzzb;
 
 	/**
-	 * ÊÇ·ñÍÆ¼ö
+	 * æ˜¯å¦æ¨è
 	 */
 	private int recommend;
 
     /**
-     * ¶ÔÕóµÄÀ©Õ¹Êı¾İ
+     * å¯¹é˜µçš„æ‰©å±•æ•°æ®
      */
     //private Map<String, MatchExtDO> matchExtMap = new HashMap<String, MatchExtDO>(3);
 	
 	/**
-	 * setter for column Ö÷¼üid
+	 * setter for column ä¸»é”®id
 	 */
 	public void setMatchId(long matchId) {
 		this.matchId = matchId;
 	}
 
 	/**
-	 * getter for column Ö÷¼üid
+	 * getter for column ä¸»é”®id
 	 */
 	public long getMatchId() {
 		return this.matchId;
 	}
 
 	/**
-	 * setter for column ²ÊÖÖid
+	 * setter for column å½©ç§id
 	 */
 	public void setLotteryTypeId(int lotteryTypeId) {
 		this.lotteryTypeId = lotteryTypeId;
 	}
 
 	/**
-	 * getter for column ²ÊÖÖid
+	 * getter for column å½©ç§id
 	 */
 	public int getLotteryTypeId() {
 		return this.lotteryTypeId;
 	}
 
 	/**
-	 * setter for column ²ÊÆÚid
+	 * setter for column å½©æœŸid
 	 */
 	public void setIssueId(long issueId) {
 		this.issueId = issueId;
 	}
 
 	/**
-	 * getter for column ²ÊÆÚid
+	 * getter for column å½©æœŸid
 	 */
 	public long getIssueId() {
 		return this.issueId;
 	}
 
 	/**
-	 * setter for column ³¡´ÎĞòºÅ
+	 * setter for column åœºæ¬¡åºå·
 	 */
 	public void setMatchOrder(long matchOrder) {
 		this.matchOrder = matchOrder;
 	}
 
 	/**
-	 * getter for column ³¡´ÎĞòºÅ
+	 * getter for column åœºæ¬¡åºå·
 	 */
 	public long getMatchOrder() {
 		return this.matchOrder;
 	}
 
 	/**
-	 * setter for column Íæ·¨
+	 * setter for column ç©æ³•
 	 */
 	public void setPlayType(int playType) {
 		this.playType = playType;
 	}
 
 	/**
-	 * getter for column Íæ·¨
+	 * getter for column ç©æ³•
 	 */
 	public int getPlayType() {
 		return this.playType;
 	}
 
 	/**
-	 * setter for column ±ÈÈüÊ±¼ä
+	 * setter for column æ¯”èµ›æ—¶é—´
 	 */
 	public void setPlayTime(Date playTime) {
 		this.playTime = playTime;
 	}
 
 	/**
-	 * getter for column ±ÈÈüÊ±¼ä
+	 * getter for column æ¯”èµ›æ—¶é—´
 	 */
 	public Date getPlayTime() {
 		return this.playTime;
 	}
 
 	/**
-	 * setter for column ½ØÆÚÊ±¼ä
+	 * setter for column æˆªæœŸæ—¶é—´
 	 */
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
 
 	/**
-	 * getter for column ½ØÆÚÊ±¼ä
+	 * getter for column æˆªæœŸæ—¶é—´
 	 */
 	public Date getEndTime() {
 		return this.endTime;
 	}
 
 	/**
-	 * setter for column Í£ÊÛÊ±¼ä
+	 * setter for column åœå”®æ—¶é—´
 	 */
 	public void setLastBuyTime(Date lastBuyTime) {
 		this.lastBuyTime = lastBuyTime;
 	}
 
 	/**
-	 * getter for column Í£ÊÛÊ±¼ä
+	 * getter for column åœå”®æ—¶é—´
 	 */
 	public Date getLastBuyTime() {
 		return this.lastBuyTime;
 	}
 
 	/**
-	 * setter for column ÏúÊÛ×´Ì¬
+	 * setter for column é”€å”®çŠ¶æ€
 	 */
 	public void setDrawed(int drawed) {
 		this.drawed = drawed;
 	}
 
 	/**
-	 * getter for column ÏúÊÛ×´Ì¬
+	 * getter for column é”€å”®çŠ¶æ€
 	 */
 	public int getDrawed() {
 		return this.drawed;
 	}
 
 	/**
-	 * setter for column ÖĞ½±Ãûµ¥×´Ì¬
+	 * setter for column ä¸­å¥–åå•çŠ¶æ€
 	 */
 	public void setLuckyOrderFinished(int luckyOrderFinished) {
 		this.luckyOrderFinished = luckyOrderFinished;
 	}
 
 	/**
-	 * getter for column ÖĞ½±Ãûµ¥×´Ì¬
+	 * getter for column ä¸­å¥–åå•çŠ¶æ€
 	 */
 	public int getLuckyOrderFinished() {
 		return this.luckyOrderFinished;
 	}
 
 	/**
-	 * setter for column ÏµÍ³Ëã½±×´Ì¬
+	 * setter for column ç³»ç»Ÿç®—å¥–çŠ¶æ€
 	 */
 	public void setSysCalFinished(int sysCalFinished) {
 		this.sysCalFinished = sysCalFinished;
 	}
 
 	/**
-	 * getter for column ÏµÍ³Ëã½±×´Ì¬
+	 * getter for column ç³»ç»Ÿç®—å¥–çŠ¶æ€
 	 */
 	public int getSysCalFinished() {
 		return this.sysCalFinished;
 	}
 
 	/**
-	 * setter for column ÏµÍ³±È¶Ô×´Ì¬
+	 * setter for column ç³»ç»Ÿæ¯”å¯¹çŠ¶æ€
 	 */
 	public void setSyncStatus(int syncStatus) {
 		this.syncStatus = syncStatus;
 	}
 
 	/**
-	 * getter for column ÏµÍ³±È¶Ô×´Ì¬
+	 * getter for column ç³»ç»Ÿæ¯”å¯¹çŠ¶æ€
 	 */
 	public int getSyncStatus() {
 		return this.syncStatus;
 	}
 
 	/**
-	 * setter for column Õ½¼¨¼ÆËã×´Ì¬
+	 * setter for column æˆ˜ç»©è®¡ç®—çŠ¶æ€
 	 */
 	public void setExperienced(int experienced) {
 		this.experienced = experienced;
 	}
 
 	/**
-	 * getter for column Õ½¼¨¼ÆËã×´Ì¬
+	 * getter for column æˆ˜ç»©è®¡ç®—çŠ¶æ€
 	 */
 	public int getExperienced() {
 		return this.experienced;
 	}
 
 	/**
-	 * setter for column ÈüÊÂÃû³Æ
+	 * setter for column èµ›äº‹åç§°
 	 */
 	public void setGameName(String gameName) {
 		this.gameName = gameName;
 	}
 
 	/**
-	 * getter for column ÈüÊÂÃû³Æ
+	 * getter for column èµ›äº‹åç§°
 	 */
 	public String getGameName() {
 		return this.gameName;
 	}
 
 	/**
-	 * setter for column ÈüÊÂ±àºÅ
+	 * setter for column èµ›äº‹ç¼–å·
 	 */
 	public void setGameType(String gameType) {
 		this.gameType = gameType;
 	}
 
 	/**
-	 * getter for column ÈüÊÂ±àºÅ
+	 * getter for column èµ›äº‹ç¼–å·
 	 */
 	public String getGameType() {
 		return this.gameType;
 	}
 
 	/**
-	 * setter for column ÈüÊÂ×ÊÑ¶
+	 * setter for column èµ›äº‹èµ„è®¯
 	 */
 	public void setPlayNum(int playNum) {
 		this.playNum = playNum;
 	}
 
 	/**
-	 * getter for column ÈüÊÂ×ÊÑ¶
+	 * getter for column èµ›äº‹èµ„è®¯
 	 */
 	public int getPlayNum() {
 		return this.playNum;
 	}
 
 	/**
-	 * setter for column Ö÷¶ÓÃû³Æ
+	 * setter for column ä¸»é˜Ÿåç§°
 	 */
 	public void setHostTeam(String hostTeam) {
 		this.hostTeam = hostTeam;
 	}
 
 	/**
-	 * getter for column Ö÷¶ÓÃû³Æ
+	 * getter for column ä¸»é˜Ÿåç§°
 	 */
 	public String getHostTeam() {
 		return this.hostTeam;
 	}
 
 	/**
-	 * setter for column Ö÷¶ÓÈ«Ãû
+	 * setter for column ä¸»é˜Ÿå…¨å
 	 */
 	public void setHostTeamFull(String hostTeamFull) {
 		this.hostTeamFull = hostTeamFull;
 	}
 
 	/**
-	 * getter for column Ö÷¶ÓÈ«Ãû
+	 * getter for column ä¸»é˜Ÿå…¨å
 	 */
 	public String getHostTeamFull() {
 		return this.hostTeamFull;
 	}
 
 	/**
-	 * setter for column ¿Í¶ÓÃû³Æ
+	 * setter for column å®¢é˜Ÿåç§°
 	 */
 	public void setVisitTeam(String visitTeam) {
 		this.visitTeam = visitTeam;
 	}
 
 	/**
-	 * getter for column ¿Í¶ÓÃû³Æ
+	 * getter for column å®¢é˜Ÿåç§°
 	 */
 	public String getVisitTeam() {
 		return this.visitTeam;
 	}
 
 	/**
-	 * setter for column ¿Í¶ÓÈ«Ãû
+	 * setter for column å®¢é˜Ÿå…¨å
 	 */
 	public void setVisitTeamFull(String visitTeamFull) {
 		this.visitTeamFull = visitTeamFull;
 	}
 
 	/**
-	 * getter for column ¿Í¶ÓÈ«Ãû
+	 * getter for column å®¢é˜Ÿå…¨å
 	 */
 	public String getVisitTeamFull() {
 		return this.visitTeamFull;
 	}
 
 	/**
-	 * setter for column Ö÷¶Ó×ÊÑ¶
+	 * setter for column ä¸»é˜Ÿèµ„è®¯
 	 */
 	public void setHostTeamNum(int hostTeamNum) {
 		this.hostTeamNum = hostTeamNum;
 	}
 
 	/**
-	 * getter for column Ö÷¶Ó×ÊÑ¶
+	 * getter for column ä¸»é˜Ÿèµ„è®¯
 	 */
 	public int getHostTeamNum() {
 		return this.hostTeamNum;
 	}
 
 	/**
-	 * setter for column ¿Í¶Ó×ÊÑ¶
+	 * setter for column å®¢é˜Ÿèµ„è®¯
 	 */
 	public void setVisitTeamNum(int visitTeamNum) {
 		this.visitTeamNum = visitTeamNum;
 	}
 
 	/**
-	 * getter for column ¿Í¶Ó×ÊÑ¶
+	 * getter for column å®¢é˜Ÿèµ„è®¯
 	 */
 	public int getVisitTeamNum() {
 		return this.visitTeamNum;
 	}
 
 	/**
-	 * setter for column Ö÷¶ÓÅÅÃû
+	 * setter for column ä¸»é˜Ÿæ’å
 	 */
 	public void setHostTeamRank(String hostTeamRank) {
 		this.hostTeamRank = hostTeamRank;
 	}
 
 	/**
-	 * getter for column Ö÷¶ÓÅÅÃû
+	 * getter for column ä¸»é˜Ÿæ’å
 	 */
 	public String getHostTeamRank() {
 		return this.hostTeamRank;
 	}
 
 	/**
-	 * setter for column ¿Í¶ÓÅÅÃû
+	 * setter for column å®¢é˜Ÿæ’å
 	 */
 	public void setVisitTeamRank(String visitTeamRank) {
 		this.visitTeamRank = visitTeamRank;
 	}
 
 	/**
-	 * getter for column ¿Í¶ÓÅÅÃû
+	 * getter for column å®¢é˜Ÿæ’å
 	 */
 	public String getVisitTeamRank() {
 		return this.visitTeamRank;
 	}
 
 	/**
-	 * setter for column Ö÷¶Ó¹ú¼Òid
+	 * setter for column ä¸»é˜Ÿå›½å®¶id
 	 */
 	public void setHostCountry(int hostCountry) {
 		this.hostCountry = hostCountry;
 	}
 
 	/**
-	 * getter for column Ö÷¶Ó¹ú¼Òid
+	 * getter for column ä¸»é˜Ÿå›½å®¶id
 	 */
 	public int getHostCountry() {
 		return this.hostCountry;
 	}
 
 	/**
-	 * setter for column ¿Í¶Ó¹ú¼Òid
+	 * setter for column å®¢é˜Ÿå›½å®¶id
 	 */
 	public void setVisitCountry(int visitCountry) {
 		this.visitCountry = visitCountry;
 	}
 
 	/**
-	 * getter for column ¿Í¶Ó¹ú¼Òid
+	 * getter for column å®¢é˜Ÿå›½å®¶id
 	 */
 	public int getVisitCountry() {
 		return this.visitCountry;
@@ -577,28 +577,28 @@ public class MatchDO extends BaseDO implements Comparable<MatchDO>{
     }
 
     /**
-	 * setter for column ÎÄ×ÖÖ±²¥
+	 * setter for column æ–‡å­—ç›´æ’­
 	 */
 	public void setWzzb(String wzzb) {
 		this.wzzb = wzzb;
 	}
 
 	/**
-	 * getter for column ÎÄ×ÖÖ±²¥
+	 * getter for column æ–‡å­—ç›´æ’­
 	 */
 	public String getWzzb() {
 		return this.wzzb;
 	}
 
 	/**
-	 * setter for column ÊÇ·ñÍÆ¼ö
+	 * setter for column æ˜¯å¦æ¨è
 	 */
 	public void setRecommend(int recommend) {
 		this.recommend = recommend;
 	}
 
 	/**
-	 * getter for column ÊÇ·ñÍÆ¼ö
+	 * getter for column æ˜¯å¦æ¨è
 	 */
 	public int getRecommend() {
 		return this.recommend;

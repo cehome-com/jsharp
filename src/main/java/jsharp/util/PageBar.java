@@ -4,16 +4,16 @@ import javax.servlet.http.HttpServletRequest;
 
 
 /**
- * ·â×°·ÖÒ³ºÍÅÅĞò²ÎÊı
+ * å°è£…åˆ†é¡µå’Œæ’åºå‚æ•°
  * 
  * @param <T>
- *            PageÖĞµÄ¼ÇÂ¼ÀàĞÍ
+ *            Pageä¸­çš„è®°å½•ç±»å‹
  * @author Liang
  */
 public class PageBar<T>{
 	
 
-	/** ·ÖÒ³ĞÅÏ¢±£´æÔÚrequestÖĞµÄ²ÎÊıÃû³Æ */
+	/** åˆ†é¡µä¿¡æ¯ä¿å­˜åœ¨requestä¸­çš„å‚æ•°åç§° */
 	public static final String PAGE_BAR_OBJECT = "PAGE_BAR";
 
 	//public static final String REQ_FLIP_LC = "lc";
@@ -40,7 +40,7 @@ public class PageBar<T>{
 	private long recordStart;
 
 	 
-	private int pagesShow = 10; // ÔÚÒ³ÃæÉÏÏÔÊ¾µÄ·ÖÒ³Êı like google
+	private int pagesShow = 10; // åœ¨é¡µé¢ä¸Šæ˜¾ç¤ºçš„åˆ†é¡µæ•° like google
 	
 	private T data;
 	
@@ -87,7 +87,7 @@ public class PageBar<T>{
 		long after = pageCount - pageNo;
 
 		if (before < 5)
-			return 1; // Èç¹ûÇ°ÃæĞ¡ÓÚ5Ò³¾ÍÈ«²¿ÁôÏÂ£¬»òÕßÍùºó·­¡£
+			return 1; // å¦‚æœå‰é¢å°äº5é¡µå°±å…¨éƒ¨ç•™ä¸‹ï¼Œæˆ–è€…å¾€åç¿»ã€‚
 		else {
 			if (after > pagesShow - 5) {
 				return pageNo - 4;
@@ -130,14 +130,14 @@ public class PageBar<T>{
 
 	 
  
-	 /* µÚÒ»Ìõ¼ÇÂ¼ÔÚ½á¹û¼¯ÖĞµÄÎ»ÖÃ,ĞòºÅ´Ó0¿ªÊ¼.
+	 /* ç¬¬ä¸€æ¡è®°å½•åœ¨ç»“æœé›†ä¸­çš„ä½ç½®,åºå·ä»0å¼€å§‹.
 	 */
 	public long getRecordStart() {
 		return recordStart;
 	}
 
 	/**
-	 * ×ÜÒ³Êı.
+	 * æ€»é¡µæ•°.
 	 */
 	public long getPageCount() {
 		
@@ -146,14 +146,14 @@ public class PageBar<T>{
 	}
 
 	/**
-	 * ÊÇ·ñ»¹ÓĞÏÂÒ»Ò³.
+	 * æ˜¯å¦è¿˜æœ‰ä¸‹ä¸€é¡µ.
 	 */
 	public boolean isNext() {
 		return (pageNo + 1 <= getPageCount());
 	}
 
 	/**
-	 * ·µ»ØÏÂÒ³µÄÒ³ºÅ,ĞòºÅ´Ó1¿ªÊ¼.
+	 * è¿”å›ä¸‹é¡µçš„é¡µå·,åºå·ä»1å¼€å§‹.
 	 */
 	public long getNextPage() {
 		if (isNext())
@@ -163,14 +163,14 @@ public class PageBar<T>{
 	}
 
 	/**
-	 * ÊÇ·ñ»¹ÓĞÉÏÒ»Ò³.
+	 * æ˜¯å¦è¿˜æœ‰ä¸Šä¸€é¡µ.
 	 */
 	public boolean isPrev() {
 		return (pageNo - 1 >= 1);
 	}
 
 	/**
-	 * ·µ»ØÉÏÒ³µÄÒ³ºÅ,ĞòºÅ´Ó1¿ªÊ¼.
+	 * è¿”å›ä¸Šé¡µçš„é¡µå·,åºå·ä»1å¼€å§‹.
 	 */
 	public long getPrevPage() {
 		if (isPrev())
@@ -180,7 +180,7 @@ public class PageBar<T>{
 	}
 
 	/**
-	 * Ã¿Ò³µÄ¼ÇÂ¼ÊıÁ¿.
+	 * æ¯é¡µçš„è®°å½•æ•°é‡.
 	 */
 	public long getPageSize() {
 		return pageSize;
@@ -191,7 +191,7 @@ public class PageBar<T>{
 	}
 
 	/**
-	 * µ±Ç°Ò³µÄÒ³ºÅ,ĞòºÅ´Ó1¿ªÊ¼.
+	 * å½“å‰é¡µçš„é¡µå·,åºå·ä»1å¼€å§‹.
 	 */
 	public long getPageNo() {
 		return pageNo;
@@ -202,7 +202,7 @@ public class PageBar<T>{
 	}
 
 	/**
-	 * ×Ü¼ÇÂ¼ÊıÁ¿.
+	 * æ€»è®°å½•æ•°é‡.
 	 */
 	public long getRecordCount() {
 		return recordCount;
@@ -215,12 +215,12 @@ public class PageBar<T>{
  
 
 	/**
-	 * ÉèÖÃ·­Ò³µÄ»ù´¡URL¡£Í¬Ê±°Ñ´ËPageFlipÍ¨¹ıkey£ºFLIP_SOURCE±£´æµ½requestµÄattributeÖĞ
+	 * è®¾ç½®ç¿»é¡µçš„åŸºç¡€URLã€‚åŒæ—¶æŠŠæ­¤PageFlipé€šè¿‡keyï¼šFLIP_SOURCEä¿å­˜åˆ°requestçš„attributeä¸­
 	 * 
 	 * @param request
 	 *            HttpServletRequest
 	 * @param pageNoParamName
-	 *            ´æ´¢ÔÚrequestÖĞ£¬ÓÃÓÚ±íÊ¾µ±Ç°Ò³ÂëµÄ²ÎÊıÃû³Æ
+	 *            å­˜å‚¨åœ¨requestä¸­ï¼Œç”¨äºè¡¨ç¤ºå½“å‰é¡µç çš„å‚æ•°åç§°
 	 */
 	public void setRequest(HttpServletRequest request, String pageNoParamName,String... filterParamNames) {
 		String queryString = request.getQueryString();
@@ -259,22 +259,22 @@ public class PageBar<T>{
 	}
 
 	/**
-	 * ½«URLµØÖ·ÖĞ¸ø¶¨µÄÒ»¸ö²ÎÊıÈ¥µô¡£
+	 * å°†URLåœ°å€ä¸­ç»™å®šçš„ä¸€ä¸ªå‚æ•°å»æ‰ã€‚
 	 * 
 	 * @param queryString
-	 *            ½«Òª´¦ÀíµÄURLµØÖ·
+	 *            å°†è¦å¤„ç†çš„URLåœ°å€
 	 * @param toescape
-	 *            ÒªÉ¾µôµÄ²ÎÊıÃû³Æ¡£
+	 *            è¦åˆ æ‰çš„å‚æ•°åç§°ã€‚
 	 */
 	/*private static String getSubQueryString(String queryString, String toescape) {
 		// String queryString = request.getQueryString() ;
-		// FIXME ÓĞ¸öBUG
+		// FIXME æœ‰ä¸ªBUG
 		if (queryString == null)
 			return "";
 
 		int pos = queryString.indexOf(toescape);
 		if (pos < 0)
-			return queryString; // ²»´æÔÚĞèÒªµÄÊı
+			return queryString; // ä¸å­˜åœ¨éœ€è¦çš„æ•°
 
 		StringBuffer sb = new StringBuffer(128);
 		int total = queryString.length();

@@ -15,15 +15,15 @@ import org.slf4j.LoggerFactory;
 //import com.myarch.reloader.*;
 
 /*
- * È±Ê¡ÅäÖÃÐÅÏ¢¶ÁÈ¡Àà£¬ÓÃÓÚ¾²Ì¬·½·¨Ö±½Ó¶ÁÈ¡
- * Ê×ÏÈ´Ówebsharp.properties websharp1.properties websharp2.properties
+ * ç¼ºçœé…ç½®ä¿¡æ¯è¯»å–ç±»ï¼Œç”¨äºŽé™æ€æ–¹æ³•ç›´æŽ¥è¯»å–
+ * é¦–å…ˆä»Žwebsharp.properties websharp1.properties websharp2.properties
  * */
 /**
- *È±Ê¡ÅäÖÃÐÅÏ¢¶ÁÈ¡Àà£¬ÓÃÓÚ¾²Ì¬·½·¨Ö±½Ó¶ÁÈ¡
- * Ê×ÏÈ´Ówebsharp.properties websharp-1.properties websharp-2.properties£¨ºóÕß´æÔÚÏàÍ¬ÊôÐÔÔò»á¸²¸ÇÇ°Õß£© Èý¸öÎÄ¼þÖÐ¶ÁÈ¡
- * ÏîÄ¿Êµ¼ÊÅäÖÃÎÄ¼þÃû³Æ£¬ config-filesÊôÐÔ±íÊ¾ÕýÊ½»·¾³µÄÅäÖÃÎÄ¼þÃû³Æ£¬¿ÉÒÔÊ±¶à¸ö£¬Èç config-files=config1,config2
- * Èç¹ûÊÇ±¾µØ²âÊÔ£¬¿ÉÒÔÅäÖÃ²âÊÔÅäÖÃÎÄ¼þconfig-test-files£¬Í¬Ê±ÒªÖ¸¶¨Ò»¸ö²âÊÔ»·¾³ÅÐ¶ÏµÄÀàºÍ·½·¨£¨config-test-class,config-test-method£©
- * ÓÃÓÚÅÐ¶ÏÊÇ·ñÔÚ¼ÓÔØÍêconfig-filesºóÊÇ·ñ¼ÌÐø¼ÓÔØconfig-test-files,Èç£º
+ *ç¼ºçœé…ç½®ä¿¡æ¯è¯»å–ç±»ï¼Œç”¨äºŽé™æ€æ–¹æ³•ç›´æŽ¥è¯»å–
+ * é¦–å…ˆä»Žwebsharp.properties websharp-1.properties websharp-2.propertiesï¼ˆåŽè€…å­˜åœ¨ç›¸åŒå±žæ€§åˆ™ä¼šè¦†ç›–å‰è€…ï¼‰ ä¸‰ä¸ªæ–‡ä»¶ä¸­è¯»å–
+ * é¡¹ç›®å®žé™…é…ç½®æ–‡ä»¶åç§°ï¼Œ config-fileså±žæ€§è¡¨ç¤ºæ­£å¼çŽ¯å¢ƒçš„é…ç½®æ–‡ä»¶åç§°ï¼Œå¯ä»¥æ—¶å¤šä¸ªï¼Œå¦‚ config-files=config1,config2
+ * å¦‚æžœæ˜¯æœ¬åœ°æµ‹è¯•ï¼Œå¯ä»¥é…ç½®æµ‹è¯•é…ç½®æ–‡ä»¶config-test-filesï¼ŒåŒæ—¶è¦æŒ‡å®šä¸€ä¸ªæµ‹è¯•çŽ¯å¢ƒåˆ¤æ–­çš„ç±»å’Œæ–¹æ³•ï¼ˆconfig-test-class,config-test-methodï¼‰
+ * ç”¨äºŽåˆ¤æ–­æ˜¯å¦åœ¨åŠ è½½å®Œconfig-filesåŽæ˜¯å¦ç»§ç»­åŠ è½½config-test-files,å¦‚ï¼š
  * 
 sample:
 config-files=classpath\:config.properties;classpath\:config-1.properties
@@ -42,8 +42,8 @@ public class DefaultConfig   {
 	
 	public static String WS_DATASOURCES="ws-datasources";
 	
-	//-- ¶¨ÒåÊ±¼ä¸ñÊ½£¨ÊµÌåÀà×ª»»Ê±ÓÃµ½£©£¬Ã¿ÖÖ¸ñÊ½¶¼¿ÉÒÔ¶à¸ö£¬ÓÃ¶ººÅ¸ô¿ª
-	//È±Ê¡ÈÕÆÚºÍÊ±¼ä¸ñÊ½
+	//-- å®šä¹‰æ—¶é—´æ ¼å¼ï¼ˆå®žä½“ç±»è½¬æ¢æ—¶ç”¨åˆ°ï¼‰ï¼Œæ¯ç§æ ¼å¼éƒ½å¯ä»¥å¤šä¸ªï¼Œç”¨é€—å·éš”å¼€
+	//ç¼ºçœæ—¥æœŸå’Œæ—¶é—´æ ¼å¼
 	public static String WS_CONVERTER_DATETIME_DEFAULT="ws-converter-datetime-default";
 	//java.util.date java.sql.date
 	public static String WS_CONVERTER_DATETIME_DATE="ws-converter-datetime-date";
@@ -51,10 +51,10 @@ public class DefaultConfig   {
 	public static String WS_CONVERTER_DATETIME_TIME="ws-converter-datetime-time";
 	//java.sql.timestamp
 	public static String WS_CONVERTER_DATETIME_TIMESTAMP="ws-converter-datetime-timestamp";
-	//×ª»»´íÎóÊÇ·ñÅ×Òì³£¡£  
+	//è½¬æ¢é”™è¯¯æ˜¯å¦æŠ›å¼‚å¸¸ã€‚  
 	public static String WS_CONVERTER_EXCEPTION_THROW="ws-convert-exception-throw";
 	
-	//×ª»»´íÎóÊÇ·ñÅ×Òì³£¡£  
+	//è½¬æ¢é”™è¯¯æ˜¯å¦æŠ›å¼‚å¸¸ã€‚  
 	public   static  String WS_MULTIPART_ENCODING="ws-multipart-encoding";
 	public   static  String WS_MULTIPART_MAX_FILE_SIZE="ws-multipart-max-file-size";
 	public   static  String WS_MULTIPART_MAX_UPLOAD_SIZE="ws-multipart-max-upload-size";
@@ -67,7 +67,7 @@ public class DefaultConfig   {
 		 
 		Config websharpConfig=new Config("classpath:websharp", ".properties",3,null);  
 		
-		//-- Èç¹û¶¨ÒåÁËencoding£¬Ôò°´ÕÕencodingÖØÐÂ¼ÓÔØÊôÐÔÎÄ¼þ
+		//-- å¦‚æžœå®šä¹‰äº†encodingï¼Œåˆ™æŒ‰ç…§encodingé‡æ–°åŠ è½½å±žæ€§æ–‡ä»¶
 		String encoding=websharpConfig.getStr("config-encoding").trim();
 		if(encoding.length()>0)
 			websharpConfig=new Config("classpath:websharp", ".properties",3,encoding);  

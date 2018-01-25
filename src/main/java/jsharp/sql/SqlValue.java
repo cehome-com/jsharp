@@ -2,7 +2,7 @@ package jsharp.sql;
 /**
  * 
  * @author wanma
- * @creation 2014��6��8��
+ * @creation 2014锟斤拷6锟斤拷8锟斤拷
  */
 public class SqlValue {
 	

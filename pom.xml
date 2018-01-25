@@ -4,8 +4,11 @@
 	<groupId>com.cehome</groupId>
 	<artifactId>jsharp</artifactId>
 	<version>1.35-SNAPSHOT</version>
+	<name>jsharp</name>
+	<description>database orm util</description>
+	<url>https://github.com/cehome-com/jsharp</url>
 	<properties>
-		<project.build.sourceEncoding>GBK</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
 		<spring.version>3.0.6.RELEASE</spring.version>
 	</properties>
@@ -155,6 +158,7 @@
 		</dependency>
 	</dependencies>
 
+
     <build>
     <plugins>
     <plugin>
@@ -165,14 +169,14 @@
             <compilerVersion>${java.version}</compilerVersion>
             <source>${java.version}</source>
             <target>${java.version}</target>
-            <encoding>GBK</encoding>
+            <encoding>UTF-8</encoding>
             <debug>true</debug>
         </configuration>
     </plugin>
 		<!--   要将源码放上去，需要加入这个插件    -->
 		<plugin>
 			<artifactId>maven-source-plugin</artifactId>
-			<version>2.4</version>
+			<version>3.0.1</version>
 			<configuration>
 				<attach>true</attach>
 			</configuration>
@@ -200,5 +204,92 @@
             <url>http://192.168.0.12:8080/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
+
+
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>maruixiang</name>
+			<email>maruixiang@sina.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>git@github.com:cehome-com/jsharp.git</connection>
+		<developerConnection>git@github.com:cehome-com/jsharp.git</developerConnection>
+		<url>https://github.com/cehome-com/jsharp</url>
+	</scm>
+
+
+	<profiles>
+		<profile>
+			<id>oss</id>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>oss</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+				</snapshotRepository>
+				<repository>
+					<id>oss</id>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<!-- Source -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<phase>compile</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- Javadoc -->
+					<!--<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.10.4</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>-->
+					<!-- Gpg Signature -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>

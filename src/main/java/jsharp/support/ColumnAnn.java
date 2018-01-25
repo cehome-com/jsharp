@@ -1,6 +1,6 @@
 package jsharp.support;
 /**
- * ×Ö¶ÎµÄÊôĞÔĞÅÏ¢
+ * å­—æ®µçš„å±æ€§ä¿¡æ¯
  * @author ma
  *
  */

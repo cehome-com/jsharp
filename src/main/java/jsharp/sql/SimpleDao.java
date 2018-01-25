@@ -12,13 +12,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * ¶Ôsession ×ö½øÒ»²½µÄ·â×°£¬¶ÔÖ¸¶¨µÄ±í½øĞĞÔöÉ¾¸Ä »òÕß¼òµ¥²éÑ¯
+ * å¯¹session åšè¿›ä¸€æ­¥çš„å°è£…ï¼Œå¯¹æŒ‡å®šçš„è¡¨è¿›è¡Œå¢åˆ æ”¹ æˆ–è€…ç®€å•æŸ¥è¯¢
  * 
- * SimpleDao ÓÃµ½ÁËµÄsessionÎªsessionFactory.getCurrentSession()£¬ËùÒÔÈç¹ûÃ»ÓĞ@Transactional
- * ×¢½â£¬ ·½·¨Ö´ĞĞÍê±Ïºó±ØĞëÊÖ¶¯¹Ø±Õsession SimpleDao.getSessionFactory().close();
+ * SimpleDao ç”¨åˆ°äº†çš„sessionä¸ºsessionFactory.getCurrentSession()ï¼Œæ‰€ä»¥å¦‚æœæ²¡æœ‰@Transactional
+ * æ³¨è§£ï¼Œ æ–¹æ³•æ‰§è¡Œå®Œæ¯•åå¿…é¡»æ‰‹åŠ¨å…³é—­session SimpleDao.getSessionFactory().close();
  * 
- * È±Ê¡¹¹Ôìº¯Êı»áÈ¡websharpÅäÖÃÖĞµÚÒ»¸öSessionFactory£¨Èç¹û´æÔÚ£©£¬
- * ÔÚspring»·¾³ÖĞÈç¹ûxmlÅäÖÃÁËSessionFactory£¬Ôò»á×¢ÈëspringµÄSessionFactory¸²¸ÇÇ°Õß
+ * ç¼ºçœæ„é€ å‡½æ•°ä¼šå–websharpé…ç½®ä¸­ç¬¬ä¸€ä¸ªSessionFactoryï¼ˆå¦‚æœå­˜åœ¨ï¼‰ï¼Œ
+ * åœ¨springç¯å¢ƒä¸­å¦‚æœxmlé…ç½®äº†SessionFactoryï¼Œåˆ™ä¼šæ³¨å…¥springçš„SessionFactoryè¦†ç›–å‰è€…
  * 
  * @author ma
  * 
@@ -33,7 +33,7 @@ public class SimpleDao<T> extends AbstractDao<T>  {
 	}
 	
 	/**
-	 * ÓÃÓÚ¼Ì³ĞÊ±Ê¹ÓÃ
+	 * ç”¨äºç»§æ‰¿æ—¶ä½¿ç”¨
 	 */
 	protected SimpleDao() {
 		super();
@@ -49,7 +49,7 @@ public class SimpleDao<T> extends AbstractDao<T>  {
 
 
     /**
-	 * ÓÃÓÚ¼Ì³ĞÊ±Ê¹ÓÃ
+	 * ç”¨äºç»§æ‰¿æ—¶ä½¿ç”¨
 	 */
 	protected SimpleDao(final SessionFactory sessionFactory) {
 		super(sessionFactory);

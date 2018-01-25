@@ -210,8 +210,8 @@ public class StringList {
   
   /***
    * 
-   * @param lines >0·µ»Ø¿ªÊ¼linesÐÐ  <0Ôò´Óºó·µ»ØlinesÐÐ
-   * @return Ö¸¶¨ÐÐÊýµÄÊý¾Ý
+   * @param lines >0è¿”å›žå¼€å§‹linesè¡Œ  <0åˆ™ä»ŽåŽè¿”å›žlinesè¡Œ
+   * @return æŒ‡å®šè¡Œæ•°çš„æ•°æ®
    */
   public String getLimitText(int lines) {
 	    StringBuffer result = new StringBuffer();

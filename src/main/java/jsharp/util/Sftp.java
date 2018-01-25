@@ -26,16 +26,16 @@ public class Sftp {
 	private JSch jsch = new JSch();
 
 	/**
-	 * Á¬½Ósftp·şÎñÆ÷
+	 * è¿æ¥sftpæœåŠ¡å™¨
 	 * 
 	 * @param host
-	 *            Ö÷»ú
+	 *            ä¸»æœº
 	 * @param port
-	 *            ¶Ë¿Ú
+	 *            ç«¯å£
 	 * @param username
-	 *            ÓÃ»§Ãû
+	 *            ç”¨æˆ·å
 	 * @param password
-	 *            ÃÜÂë
+	 *            å¯†ç 
 	 * @return
 	 * @throws JSchException
 	 */
@@ -66,12 +66,12 @@ public class Sftp {
 	}
 
 	/**
-	 * ÉÏ´«ÎÄ¼ş
+	 * ä¸Šä¼ æ–‡ä»¶
 	 * 
 	 * @param directory
-	 *            ÉÏ´«µÄÄ¿Â¼
+	 *            ä¸Šä¼ çš„ç›®å½•
 	 * @param localFile
-	 *            ÒªÉÏ´«µÄÎÄ¼ş
+	 *            è¦ä¸Šä¼ çš„æ–‡ä»¶
 	 * @param c
 	 * @throws SftpException
 	 * @throws FileNotFoundException
@@ -93,14 +93,14 @@ public class Sftp {
 	}
 
 	/**
-	 * ÏÂÔØÎÄ¼ş
+	 * ä¸‹è½½æ–‡ä»¶
 	 * 
 	 * @param directory
-	 *            ÏÂÔØÄ¿Â¼
+	 *            ä¸‹è½½ç›®å½•
 	 * @param downloadFile
-	 *            ÏÂÔØµÄÎÄ¼ş
+	 *            ä¸‹è½½çš„æ–‡ä»¶
 	 * @param saveFile
-	 *            ´æÔÚ±¾µØµÄÂ·¾¶
+	 *            å­˜åœ¨æœ¬åœ°çš„è·¯å¾„
 	 * @param c
 	 * @throws FileNotFoundException
 	 * @throws SftpException
@@ -120,12 +120,12 @@ public class Sftp {
 	}
 
 	/**
-	 * É¾³ıÎÄ¼ş
+	 * åˆ é™¤æ–‡ä»¶
 	 * 
 	 * @param directory
-	 *            ÒªÉ¾³ıÎÄ¼şËùÔÚÄ¿Â¼
+	 *            è¦åˆ é™¤æ–‡ä»¶æ‰€åœ¨ç›®å½•
 	 * @param deleteFile
-	 *            ÒªÉ¾³ıµÄÎÄ¼ş
+	 *            è¦åˆ é™¤çš„æ–‡ä»¶
 	 * @param c
 	 * @throws SftpException
 	 */
@@ -141,10 +141,10 @@ public class Sftp {
 	}
 
 	/**
-	 * ÁĞ³öÄ¿Â¼ÏÂµÄÎÄ¼ş
+	 * åˆ—å‡ºç›®å½•ä¸‹çš„æ–‡ä»¶
 	 * 
 	 * @param directory
-	 *            ÒªÁĞ³öµÄÄ¿Â¼
+	 *            è¦åˆ—å‡ºçš„ç›®å½•
 	 * @param c
 	 * @return
 	 * @throws SftpException
