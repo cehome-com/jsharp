@@ -21,8 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * 在spring环境中如果xml配置了SessionFactory，则会注入spring的SessionFactory覆盖前者
  * 
  * @author ma
- * 
- * @param <T>
+ *
  */
 public class SimpleDao<T> extends AbstractDao<T>  {
  
@@ -50,6 +49,7 @@ public class SimpleDao<T> extends AbstractDao<T>  {
 
     /**
 	 * 用于继承时使用
+	 * @param sessionFactory
 	 */
 	protected SimpleDao(final SessionFactory sessionFactory) {
 		super(sessionFactory);

@@ -139,7 +139,7 @@ public class Convert
 	
 	
 	/**
-	 * Convert an array to string , such as {'aa','bb'} ==> 'aa','bb'
+	 * Convert an array to string , such as {'aa','bb'} to 'aa','bb'
 	 * @param array
 	 * @param separator
 	 * @param quote

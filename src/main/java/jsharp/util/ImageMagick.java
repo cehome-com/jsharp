@@ -19,15 +19,9 @@ public class ImageMagick
 
 	/**
 	 * do security watermark
-	 * 
-	 * @param watermark
-	 *            file
-	 * @param source
-	 *            image
-	 * @param magic's
+
+	 * @param imageMagickPath magic's
 	 *            setup path
-	 * @return
-	 * @throws Exception
 	 */
 	
 	public ImageMagick(String imageMagickPath)
@@ -79,12 +73,7 @@ public class ImageMagick
 	/**
 	 * 加上水印
 	 * 
-	 * @param watermark
-	 *            file
-	 * @param source
-	 *            image
-	 * @param magic's
-	 *            setup path
+
 	 * @return
 	 * @throws Exception
 	 */

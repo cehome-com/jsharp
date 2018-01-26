@@ -36,7 +36,6 @@ public class Sftp {
 	 *            用户名
 	 * @param password
 	 *            密码
-	 * @return
 	 * @throws JSchException
 	 */
 	public void connect(String host, int port, String username, String password)
@@ -67,12 +66,6 @@ public class Sftp {
 
 	/**
 	 * 上传文件
-	 * 
-	 * @param directory
-	 *            上传的目录
-	 * @param localFile
-	 *            要上传的文件
-	 * @param c
 	 * @throws SftpException
 	 * @throws FileNotFoundException
 	 */
@@ -95,13 +88,11 @@ public class Sftp {
 	/**
 	 * 下载文件
 	 * 
-	 * @param directory
-	 *            下载目录
+
 	 * @param downloadFile
 	 *            下载的文件
 	 * @param saveFile
 	 *            存在本地的路径
-	 * @param c
 	 * @throws FileNotFoundException
 	 * @throws SftpException
 	 */
@@ -122,11 +113,10 @@ public class Sftp {
 	/**
 	 * 删除文件
 	 * 
-	 * @param directory
-	 *            要删除文件所在目录
+
 	 * @param deleteFile
 	 *            要删除的文件
-	 * @param c
+
 	 * @throws SftpException
 	 */
 	public void delete(String deleteFile) throws SftpException {
@@ -145,7 +135,7 @@ public class Sftp {
 	 * 
 	 * @param directory
 	 *            要列出的目录
-	 * @param c
+
 	 * @return
 	 * @throws SftpException
 	 */

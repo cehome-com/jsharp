@@ -23,7 +23,7 @@ public class WebKit
 	 * 
 	 * @param request
 	 *            HttpServletRequest
-	 * @param pageNoParamName
+	 * @param filterParamNames
 	 *            存储在request中，用于表示当前页码的参数名称
 	 */
 	public static String getFilterQueryString(HttpServletRequest request, String... filterParamNames) {
@@ -136,7 +136,7 @@ public class WebKit
 	/**
 	 * 
 	 * @param response
-	 * @param filename
+	 * @param is
 	 *            源文件名
 	 * @param isAttachment
 	 *            是否作为附件下载

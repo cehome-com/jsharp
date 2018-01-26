@@ -24,6 +24,7 @@ public @interface Column {
 	 * annotation at the table level and is useful for when the unique key constraint is
 	 * only a single field. This constraint applies in addition to any constraint entailed
 	 * by primary key mapping and to constraints specified at the table level.
+	 * @return boolean
 	 */
 	boolean unique() default false;
 	/**
@@ -41,6 +42,7 @@ public @interface Column {
 	/**
 	 * The SQL fragment that is used when generating the DDL for the column.
 	 * Defaults to the generated SQL to create a column of the inferred type.
+	 * @return string
 	 */
 	String columnDefinition() default "";
 	/**

@@ -15,8 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * like SimpelDao, but invoke method with an additional table name as a parameter
  * 
  * @author ma
- * 
- * @param <T>
+ *
  */
 public class TableDao<T> extends AbstractDao<T>  {
 
@@ -31,6 +30,7 @@ public class TableDao<T> extends AbstractDao<T>  {
 
 	/**
 	 * 用于继承时使用
+	 * @param sessionFactory
 	 */
 	protected TableDao(final SessionFactory sessionFactory) {
 		super(sessionFactory);

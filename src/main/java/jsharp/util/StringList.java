@@ -210,7 +210,7 @@ public class StringList {
   
   /***
    * 
-   * @param lines >0返回开始lines行  <0则从后返回lines行
+   * @param lines 大于0返回开始lines行  小于0则从后返回lines行
    * @return 指定行数的数据
    */
   public String getLimitText(int lines) {

@@ -89,12 +89,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 
     }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#find(java.lang.String, java.lang.String,
-	 * java.lang.Class, java.lang.Object)
-	 */
+
 	public <T> List queryListByProps(String table, String orderBy, Class<T> entityClass, Object... nameAndValues)
 
 	{
@@ -104,12 +99,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		return queryList(sql, entityClass, params.toArray());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#find(java.lang.String, java.lang.String, int, int,
-	 * java.lang.Class, java.lang.Object)
-	 */
+
 	public <T> List queryPageByProps(String table, String orderBy, int page, int size, Class<T> entityClass, Object... nameAndValues) {
 		List params = new ArrayList();
 		String sql = buildSqlByProps(table, null, orderBy, entityClass, params, nameAndValues);
@@ -121,11 +111,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		return queryPageByProps(table, orderBy, page, size, (Class<T>) entity.getClass(), params.toArray());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#find(java.lang.String, java.lang.String, T)
-	 */
+
 	public <T> List<T> queryListByEntity(String table, String orderBy, T entity) {
 
 		List params = parseParams(table, entity);
@@ -133,12 +119,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#findOne(java.lang.String, java.lang.String,
-	 * java.lang.Class, java.lang.Object)
-	 */
+
 	public <T> T queryOneByProps(String table, String orderBy, Class<T> entityClass, Object... nameAndValues)
 
 	{
@@ -153,18 +134,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		return queryOneByProps(table, orderBy, (Class<T>) entity.getClass(), params.toArray());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.SessionFactory#get(java.lang.Class, java.lang.String,
-	 * java.lang.Object)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#get(java.lang.String, java.lang.Object,
-	 * java.lang.Class)
-	 */
+
 	public <T> T get(String table, Object id, Class<T> entityClass) {
 
 		BeanAnn ba = BeanAnn.getBeanAnn(entityClass);
@@ -186,16 +156,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		String[] ignoreProps = empty?new String[]{ba.getIdProperty().getName()}:null;
 		return  insert(table,entity,empty,ignoreProps);
 	}
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.SessionFactory#insert(java.lang.String, java.lang.Object)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#insert(java.lang.String, java.lang.Object)
-	 */
+
 	private int insert(String table, Object entity, boolean useIdGen,String[] ignoreProps) {
 
 		try {
@@ -342,18 +303,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.SessionFactory#query(java.lang.Class, java.lang.String,
-	 * java.lang.Object)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#query(java.lang.String, java.lang.Class,
-	 * java.lang.Object)
-	 */
+
 	public <T> List<T> queryList(String sql, Class<T> entityClass, Object... params) {
 
 		BeanListHandler<T> h = new BeanListHandler<T>(entityClass);
@@ -367,12 +317,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		return query(sql, rsh, params);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#query(java.lang.String, int, int, java.lang.Class,
-	 * java.lang.Object)
-	 */
+
 	public <T> List<T> queryList(String sql, int page, int size, Class<T> entityClass, Object... params) {
 
 		BeanPageHandler<T> h = new BeanPageHandler<T>(page, size, entityClass);
@@ -380,18 +325,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.SessionFactory#queryOne(java.lang.Class,
-	 * java.lang.String, java.lang.Object)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#queryOne(java.lang.String, java.lang.Class,
-	 * java.lang.Object)
-	 */
+
 	public <T> T queryOne(String sql, final Class<T> entityClass, Object... params) {
 		sql = SqlSupport.fixSql(SqlSupport.replacePropsWithColumns(entityClass, sql), entityClass);
 
@@ -433,11 +367,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		return queryValueByProps(table, field, orderBy, (Class<T>) entity.getClass(), params.toArray());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#reload(java.lang.String, java.lang.Object)
-	 */
+
 	public boolean reload(String table, final Object entity) {
 		BeanAnn ba = BeanAnn.getBeanAnn(entity.getClass());
 
@@ -535,16 +465,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.SessionFactory#update(java.lang.String, java.lang.Object)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see jsharp.sql.q#update(java.lang.String, java.lang.Object)
-	 */
+
 	public int update(String table, Object entity,String... keys) {
 		
 		if(keys==null|| keys.length==0){
@@ -560,6 +481,7 @@ public class ObjectSessionFactory extends AbstractSessionFactory {
 	
 	/**
 	 * create cblib object which can do dynamic update
+	 * @return
 	 */
 	public <T> T createObject(Class<T> c) {
 		return BeanSupport.createEntity(c);

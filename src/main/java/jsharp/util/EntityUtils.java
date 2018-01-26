@@ -257,8 +257,6 @@ public class EntityUtils
 
 	/**
 	 * 忽略错误
-	 * 
-	 * @param <T>
 	 * @param c
 	 * @param properties
 	 * @return

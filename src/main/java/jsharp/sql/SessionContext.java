@@ -15,32 +15,7 @@ import java.util.Map; //import javax.transaction.Synchronization;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * A {@link CurrentConnectionContext} impl which scopes the notion of current
- * Connection by the current thread of execution. Unlike the JTA counterpart,
- * threads do not give us a nice hook to perform any type of cleanup making it
- * questionable for this impl to actually generate Connection instances. In the
- * interest of usability, it was decided to have this default impl actually
- * generate a Connection upon first request and then clean it up after the
- * {@link org.hibernate.Transaction} associated with that Connection is
- * committed/rolled-back. In order for ensuring that happens, the Connections
- * generated here are unusable until after {@link Connection#beginTransaction()}
- * has been called. If <tt>close()</tt> is called on a Connection managed by this
- * class, it will be automatically unbound.
- * <p/>
- * Additionally, the static {@link #bind} and {@link #unbind} methods are
- * provided to allow application code to explicitly control opening and closing
- * of these Connections. This, with some from of interception, is the preferred
- * approach. It also allows easy framework integration and one possible approach
- * for implementing long-Connections.
- * <p/>
- * The {@link #buildOrObtainConnection}, {@link #isAutoCloseEnabled},
- * {@link #isAutoFlushEnabled}, {@link #getConnectionReleaseMode}, and
- * {@link #buildCleanupSynch} methods are all provided to allow easy subclassing
- * (for long-running Connection scenarios, for example).
- * 
- * @author Steve Ebersole
- */
+
 public class SessionContext
 {
 
@@ -113,7 +88,7 @@ public class SessionContext
 	/**
 	 * Unassociate a previously bound Connection from the current thread of
 	 * execution.
-	 * 
+	 * @param factory
 	 * @return The Connection which was unbound.
 	 */
 	public static Connection unbind(SessionFactory factory)

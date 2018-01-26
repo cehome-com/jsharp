@@ -53,7 +53,6 @@ public  class Config
 
 	/**
 	 *  config config1 config2
-	 * @param classPath 
 	 * @param count  搜索索引数量，如 classPath=config , count=3 ,则会继续找config-1,config-2
 	 */
 	public   Config(String prefix,String suffix, int count,String encoding)
