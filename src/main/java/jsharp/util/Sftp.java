@@ -169,10 +169,10 @@ public class Sftp {
 
 	public static void main(String[] args) throws Exception {
 		Sftp sf = new Sftp();
-		String host = "Sftp.alipay.com";
+		String host = "localhost";
 		int port = 22;
-		String username = "tbcaipiao";
-		String password = "9Q537A";
+		String username = "root";
+		String password = "123456";
 		String directory =args[0];// "/home/tbcaipiao/sftp_root/download";
 		String uploadFile = "/home/ruixiang.mrx/readme.txt";
 		String downloadFile = "readme.txt";
